@@ -41,11 +41,11 @@ export default async function Page({ params }: PageProps) {
 
     return (
       <main className="px-[20px]">
-        <section className="py-[100px] flex flex-col items-center">
-          <div className="w-[1000px]">
+        <section className="py-[20px] lg:py-[50px] flex flex-col items-center">
+          <div className="lg:w-[1000px]">
             <div className="flex flex-col items-start gap-3">
               {/* Button */}
-              <div className="w-full flex justify-between">
+              <div className="w-full flex flex-col lg:flex-row items-start justify-between">
                 <Button variant="link" className="mb-5 flex items-center p-0" asChild>
                   <Link href="/studies">
                     <ChevronLeft size={16} />
