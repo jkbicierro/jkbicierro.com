@@ -1,7 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import { ComponentProps } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { CodeStyle } from "./mdx-code-syntax";
 
 const components = {
   table: (props: ComponentProps<"table">) => (
@@ -27,7 +26,7 @@ const components = {
   ),
   p: (props: ComponentProps<"p">) => (
     <p
-      className="text-sm lg:text-base dark:text-slate-200 text-slate-800 mb-4 leading-7"
+      className="text-sm lg:text-base dark:text-slate-200 text-slate-800 mb-4 leading-7 text-justify"
       {...props}
     />
   ),
@@ -37,31 +36,7 @@ const components = {
       {...props}
     />
   ),
-  code: ({ className, children, ...props }: ComponentProps<"code">) => {
-    const languageMatch = /language-([^\s]+)/.exec(className || "");
-    const language = languageMatch?.[1];
-    const codeString = String(children).replace(/\n$/, "");
-
-    if (language) {
-      return (
-        <SyntaxHighlighter
-          language={language}
-          style={oneDark}
-          PreTag="div"
-          className="rounded-md mb-4 text-sm"
-          customStyle={{ margin: 0, padding: "1rem" }}
-        >
-          {codeString}
-        </SyntaxHighlighter>
-      );
-    }
-
-    return (
-      <code className="text-sm" {...props}>
-        {children}
-      </code>
-    );
-  },
+  code: CodeStyle,
   pre: ({ children }: ComponentProps<"pre">) => <>{children}</>,
 } satisfies MDXComponents;
 
