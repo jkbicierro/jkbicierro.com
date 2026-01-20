@@ -61,15 +61,17 @@ export default async function Page({ params }: PageProps) {
               </div>
 
               {/* Header */}
-              <div className="mb-5 flex gap-3 items-center">
-                <Avatar className="w-[25px] h-[25px]">
-                  <AvatarImage
-                    src="https://github.com/jkbicierro.png"
-                    alt="John Bicierro"
-                  />
-                  <AvatarFallback>JB</AvatarFallback>
-                </Avatar>
-                <span className="text-sm">John Bicierro</span>
+              <div className="hidden lg:block">
+                <div className="mb-5 flex gap-3 items-center">
+                  <Avatar className="w-[25px] h-[25px]">
+                    <AvatarImage
+                      src="https://github.com/jkbicierro.png"
+                      alt="John Bicierro"
+                    />
+                    <AvatarFallback>JB</AvatarFallback>
+                  </Avatar>
+                  <span className="text-sm">John Bicierro</span>
+                </div>
               </div>
 
               {/* Stats */}
