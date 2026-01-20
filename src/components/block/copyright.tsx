@@ -11,7 +11,7 @@ export default function Copyright() {
           <AvatarImage src="https://github.com/jkbicierro.png" alt="John Bicierro" />
           <AvatarFallback>JB</AvatarFallback>
         </Avatar>
-        jkbicierro.com &copy; 2025 Crafted by John Bicierro
+        &copy; John Bicierro
       </span>
     </div>
   );
