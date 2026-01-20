@@ -46,10 +46,7 @@ export function About() {
   return (
     <>
       <section className="py-[200px] flex flex-col items-center justify-center gap-5">
-        <h2 className="text-center">
-          clarity in every{" "}
-          <span className="font-pacifico tracking-wider text-blue-500">solution</span>
-        </h2>
+        <h2 className="text-center">clarity in every solution</h2>
 
         <p className="text-slate-600 dark:text-slate-400 text-center max-w-[500px]">
           {meanings[selected as keyof typeof meanings]}
