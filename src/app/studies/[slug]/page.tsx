@@ -41,20 +41,23 @@ export default async function Page({ params }: PageProps) {
 
     return (
       <main className="px-[20px]">
-        <section className="py-[20px] lg:py-[50px] flex flex-col items-center">
-          <div className="lg:w-[1000px]">
+        <section className="py-[20px] lg:py-[50px] flex flex-col items-start lg:items-center">
+          <div className="w-full lg:w-[1000px]">
             <div className="flex flex-col items-start gap-3">
               {/* Button */}
-              <div className="w-full flex flex-col lg:flex-row items-start justify-between">
+              <div className="w-full flex flex-row items-start justify-between">
                 <Button variant="link" className="mb-5 flex items-center p-0" asChild>
                   <Link href="/studies">
                     <ChevronLeft size={16} />
                     Back to case studies
                   </Link>
                 </Button>
-                <Button variant={"outline"}>
-                  <Share size={16} /> Share &quot;{data.title}&quot;
-                </Button>
+                <div className="">
+                  <Button variant={"outline"}>
+                    <Share size={16} /> Share Link
+                    <span className="hidden lg:block">&quot;{data.title}&quot;</span>
+                  </Button>
+                </div>
               </div>
 
               {/* Header */}
@@ -77,7 +80,9 @@ export default async function Page({ params }: PageProps) {
                 {data.date ? format(parseISO(data.date), "MMMM d, yyyy") : ""}
               </time>
               <h2>{data.title}</h2>
-              <p className="text-slate-600 dark:text-slate-400">{data.description}</p>
+              <p className="text-sm lg:text-base text-slate-600 dark:text-slate-400">
+                {data.description}
+              </p>
               <small className="text-slate-600 dark:text-slate-400 uppercase text-xs">
                 {data.type} · {timeRead.text}
               </small>
