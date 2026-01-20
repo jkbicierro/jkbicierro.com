@@ -1,5 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import { ComponentProps } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const components = {
   table: (props: ComponentProps<"table">) => (
@@ -14,17 +16,53 @@ const components = {
   blockquote: (props: ComponentProps<"blockquote">) => (
     <blockquote className="" {...props} />
   ),
-  h1: (props: ComponentProps<"h1">) => <h1 className="text-4xl  mb-5" {...props} />,
-  h2: (props: ComponentProps<"h2">) => <h2 className="text-3xl mb-4 mt-8" {...props} />,
-  h3: (props: ComponentProps<"h3">) => <h3 className="text-2xl  mb-3 mt-6" {...props} />,
-  p: (props: ComponentProps<"p">) => <p className="mb-4 leading-7" {...props} />,
-  code: (props: ComponentProps<"code">) => <code className="text-sm" {...props} />,
-  pre: (props: ComponentProps<"pre">) => (
-    <pre
-      className="bg-slate-100 dark:bg-slate-900 p-4 rounded-lg mb-4 overflow-x-auto text-sm"
+  h1: (props: ComponentProps<"h1">) => (
+    <h1 className="text-2xl lg:text-3xl mb-5" {...props} />
+  ),
+  h2: (props: ComponentProps<"h2">) => (
+    <h2 className="text-xl lg:text-2xl mb-4 mt-8" {...props} />
+  ),
+  h3: (props: ComponentProps<"h3">) => (
+    <h3 className="text-base lg:text-xl mb-3 mt-6" {...props} />
+  ),
+  p: (props: ComponentProps<"p">) => (
+    <p
+      className="text-sm lg:text-base dark:text-slate-200 text-slate-800 mb-4 leading-7"
       {...props}
     />
   ),
+  li: (props: ComponentProps<"li">) => (
+    <li
+      className="list-disc text-sm lg:text-base dark:text-slate-200 text-slate-800 mb-2 ml-6 leading-7"
+      {...props}
+    />
+  ),
+  code: ({ className, children, ...props }: ComponentProps<"code">) => {
+    const languageMatch = /language-([^\s]+)/.exec(className || "");
+    const language = languageMatch?.[1];
+    const codeString = String(children).replace(/\n$/, "");
+
+    if (language) {
+      return (
+        <SyntaxHighlighter
+          language={language}
+          style={oneDark}
+          PreTag="div"
+          className="rounded-md mb-4 text-sm"
+          customStyle={{ margin: 0, padding: "1rem" }}
+        >
+          {codeString}
+        </SyntaxHighlighter>
+      );
+    }
+
+    return (
+      <code className="text-sm" {...props}>
+        {children}
+      </code>
+    );
+  },
+  pre: ({ children }: ComponentProps<"pre">) => <>{children}</>,
 } satisfies MDXComponents;
 
 export function useMDXComponents(): MDXComponents {
