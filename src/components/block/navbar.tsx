@@ -23,7 +23,7 @@ export function NavBar() {
   return (
     <>
       {/* style:lg */}
-      <nav className="z-[999] backdrop-filter backdrop-blur-md px-[30px] fixed h-[60px] w-full flex items-center justify-between lg:justify-around">
+      <nav className="z-[999] backdrop-filter backdrop-blur-md px-[20px] fixed h-[60px] w-full flex items-center justify-between lg:justify-around">
         <div className="flex gap-3">
           <Link href="/" className="flex items-center gap-3">
             <div className="absolute mt-[18px] ml-[18px] z-50 border-2 border-background bg-yellow-500 rounded-full h-[10px] w-[10px]"></div>
