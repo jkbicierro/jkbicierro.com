@@ -38,10 +38,7 @@ export default async function Page() {
       <section className="py-[100px] flex items-center justify-center">
         <div className="flex items-center justify-center">
           <div className="flex flex-col items-center gap-20">
-            <h2 className="text-center">
-              let&apos;s build something that{" "}
-              <span className="font-pacifico tracking-wider text-blue-500">works</span>
-            </h2>
+            <h2 className="text-center">let&apos;s build something that works</h2>
 
             <div className="w-full max-w-[600px] space-y-5">
               <div>
@@ -160,9 +157,9 @@ function Insights({ insights }: { insights: ReturnType<typeof getAllInsights> })
         {insights.map((insight) => (
           <Link key={insight.slug} href={`/insights/${insight.slug}`} className="group">
             <div className="flex flex-row gap-5">
-              <small className="min-w-[80px] max-w-[80px] lg:min-w-[150px] lg:max-w-[150px] text-slate-600 dark:text-slate-400">
+              <time className="min-w-[80px] max-w-[80px] lg:min-w-[150px] lg:max-w-[150px] text-slate-600 dark:text-slate-400">
                 {insight.date ? format(parseISO(insight.date), "MMMM d, yyyy") : ""}
-              </small>
+              </time>
 
               <div className="flex flex-col gap-2">
                 <h5 className="group-hover:text-primary group-hover:underline">
@@ -189,13 +186,7 @@ function Insights({ insights }: { insights: ReturnType<typeof getAllInsights> })
 function Process() {
   return (
     <section className="py-[100px] flex flex-col items-center ">
-      <h2 className="text-center">
-        how i turn business needs into{" "}
-        <span className="inline-block transition-all hover:rotate-[-5deg] shadow-2xl shadow-blue-500 text-white bg-blue-500 border border-blue-500 px-2">
-          scalable
-        </span>{" "}
-        software
-      </h2>
+      <h2 className="text-center">how i turn business needs into scalable software</h2>
 
       <div className="mt-20 flex flex-col items-center gap-5">
         <Separator
@@ -212,9 +203,7 @@ function Process() {
           </div>
 
           <div className="text-center p-5 space-y-5">
-            <h3>
-              understand the <span className="text-blue-500">problem</span>
-            </h3>
+            <h3>understand the problem</h3>
             <p className="text-slate-600 dark:text-slate-400">
               I start with the &quot;why&quot;, not just the feature list.
             </p>
@@ -231,9 +220,7 @@ function Process() {
           </div>
 
           <div className="p-5 space-y-5 text-center">
-            <h3>
-              plan for <span className="text-blue-500">scale</span>
-            </h3>
+            <h3>plan for scale</h3>
             <p className="text-slate-600 dark:text-slate-400">
               Architecture first, clean data flow, right tools, long-term thinking.
             </p>
@@ -249,9 +236,7 @@ function Process() {
             <div className="animate-ping absolute bg-blue-500 h-[30px] w-[30px] rounded-full -z-10"></div>
           </div>
           <div className="p-5 space-y-5 text-center">
-            <h3>
-              design with <span className="text-blue-500">intent</span>
-            </h3>
+            <h3>design with intent</h3>
             <p className="text-slate-600 dark:text-slate-400">
               Interfaces that reduce friction and enhance flow.
             </p>
@@ -268,9 +253,7 @@ function Process() {
           </div>
 
           <div className="p-5 space-y-5 text-center">
-            <h3>
-              build <span className="text-blue-500">precisely</span>
-            </h3>
+            <h3>build precisely</h3>
             <p className="text-slate-600 dark:text-slate-400">
               Modular code, performance-focused, written to last.
             </p>
@@ -287,9 +270,7 @@ function Process() {
           </div>
 
           <div className="p-5 space-y-5 text-center">
-            <h3>
-              deliver & <span className=" text-blue-500">improve</span>
-            </h3>
+            <h3>deliver and improve</h3>
             <p className="text-slate-600 dark:text-slate-400">
               I ship fast, learn from feedback, and optimize continuously.
             </p>
@@ -311,16 +292,13 @@ function Hero() {
       <div className="w-[650px] flex flex-col items-center text-center justify-center gap-5">
         <h1 className="font-medium space-y-5 text-nowrap">
           <div className="flex gap-2 items-center justify-center">
-            <span>designed to</span>{" "}
-            <span className="tracking-wider font-pacifico text-blue-500">simplify,</span>
+            <span>designed to</span>
+            simplify,
           </div>
 
           <div className="flex items-center justify-center gap-2">
             <span>engineered to</span>
-
-            <span className="shadow-2xl shadow-blue-500 cursor-pointer transition-all hover:rotate-[5deg] text-white bg-blue-500 border border-blue-500 px-2">
-              scale
-            </span>
+            scale
           </div>
         </h1>
         <p className="text-slate-600 dark:text-slate-400">
@@ -342,10 +320,7 @@ function Hero() {
 function Projects({ projects }: { projects: ReturnType<typeof getAllProjects> }) {
   return (
     <section className="py-[100px] flex flex-col items-center">
-      <h2 className="text-center">
-        a few things i&apos;ve{" "}
-        <span className="font-pacifico tracking-wider text-blue-500">worked</span> on
-      </h2>
+      <h2 className="text-center">a few things i&apos;ve worked on</h2>
       {/* Cards */}
       <div className="mt-20">
         <div className="flex flex-col">
@@ -368,17 +343,17 @@ function Projects({ projects }: { projects: ReturnType<typeof getAllProjects> })
               )}
 
               <div className="w-full space-y-2">
-                <small className="text-slate-600 dark:text-slate-400 uppercase">
+                <span className="text-xs text-slate-600 dark:text-slate-400 uppercase">
                   {project.small}
-                </small>
+                </span>
                 <div className="flex justify-between items-start gap-5">
                   <h5>{project.title}</h5>
-                  <small className="text-slate-600 dark:text-slate-400 text-nowrap">
+                  <time className="text-slate-600 dark:text-slate-400 text-nowrap text-sm">
                     {project.date ? format(parseISO(project.date), "MMMM d, yyyy") : ""}
-                  </small>
+                  </time>
                 </div>
 
-                <p className="max-w-[700px] text-slate-600 dark:text-slate-400">
+                <p className="text-base max-w-[700px] text-slate-600 dark:text-slate-400">
                   {project.description}
                 </p>
               </div>
@@ -400,7 +375,7 @@ function Cases({ studies }: { studies: ReturnType<typeof getAllStudies> }) {
   return (
     <section className="py-[100px] flex flex-col items-center">
       <h2 className="text-center">
-        from messy requirements to clear, scalable architectures
+        from messy requirements to clear and scalable architectures
       </h2>
 
       <div className="mt-20 w-full lg:w-[1000px]">
@@ -417,7 +392,7 @@ function Cases({ studies }: { studies: ReturnType<typeof getAllStudies> }) {
                   alt={study.title}
                   height={800}
                   width={800}
-                  className="border rounded-xl h-[350px] w-full "
+                  className="border rounded-xl h-[250px] lg:h-[350px] w-full"
                 />
 
                 <h3 className="text-base mt-4 truncate group-hover:text-primary group-hover:underline">
