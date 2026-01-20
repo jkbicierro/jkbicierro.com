@@ -1,12 +1,13 @@
 "use client";
 
-import { Home, BookOpen, Lightbulb, Folder } from "lucide-react";
+import { Home, BookOpen, Lightbulb, Folder, Sparkles } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion, useScroll } from "motion/react";
 import { ModeToggle } from "../buttons/mode-toggle";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { Button } from "../ui/button";
 
 const navigation = [
   { name: "Home", href: "/", icon: <Home size={16} /> },
@@ -32,15 +33,6 @@ export function NavBar() {
             </Avatar>
             <span className="text-sm">John Bicierro</span>
           </Link>
-
-          <div className="flex items-center gap-2">
-            <Link href="https://www.linkedin.com/in/jkbicierro/" target="_blank">
-              <FaLinkedin size={18} />
-            </Link>
-            <Link href="https://github.com/jkbicierro" target="_blank">
-              <FaGithubSquare size={18} />
-            </Link>
-          </div>
         </div>
 
         <div className="flex items-center gap-8">
@@ -66,9 +58,9 @@ export function NavBar() {
 
           <div className="flex items-center gap-2">
             {/* <Button>
-                <Sparkles />
-                Unlock Resources
-              </Button> */}
+              <Sparkles />
+              Unlock Resources
+            </Button> */}
 
             <ModeToggle />
           </div>
