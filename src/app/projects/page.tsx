@@ -8,7 +8,7 @@ import { format, parseISO } from "date-fns";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Discover John Bicierro's diverse projects, highlighting his skills and creativity in software development.",
+    "Discover John Bicierro's diverse projectws, highlighting his skills and creativity in software development.",
 };
 
 export default function Page() {
@@ -19,7 +19,7 @@ export default function Page() {
       <section className="py-[100px] flex flex-col items-center">
         <h2 className="text-center">projects i&apos;ve designed and built</h2>
 
-        <div className="mt-20 w-full lg:w-[1000px]">
+        <div className="mt-20 w-full lg:w-[800px]">
           <div className="flex flex-col">
             {projects.map((project) => (
               <Link
@@ -40,17 +40,17 @@ export default function Page() {
                 )}
 
                 <div className="w-full space-y-2">
-                  <small className="text-slate-600 dark:text-slate-400 uppercase">
+                  <span className="text-xs text-slate-600 dark:text-slate-400 uppercase">
                     {project.small}
-                  </small>
-                  <div className="flex justify-between items-center gap-5">
+                  </span>
+                  <div className="flex justify-between items-start gap-5">
                     <h5>{project.title}</h5>
-                    <small className="text-slate-600 dark:text-slate-400 text-nowrap">
+                    <time className="text-slate-600 dark:text-slate-400 text-nowrap text-sm">
                       {project.date ? format(parseISO(project.date), "MMMM, yyyy") : ""}
-                    </small>
+                    </time>
                   </div>
 
-                  <p className="max-w-[700px] text-slate-600 dark:text-slate-400">
+                  <p className="text-base max-w-[700px] text-slate-600 dark:text-slate-400">
                     {project.description}
                   </p>
                 </div>
