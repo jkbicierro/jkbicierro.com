@@ -19,8 +19,8 @@ Lessons learned shipping REST and GraphQL APIs that serve billions of requests. 
 ### 1. Versioning Strategy
 
 ```
-GET /api/v1/users/{id}       # Long-lived, maintained for 2+ years
-GET /api/v2/users/{id}       # New, incompatible shape
+GET /api/v1/users/{id} # Long-lived, maintained for 2+ years
+GET /api/v2/users/{id} # New, incompatible shape
 ```
 
 - Never break v1 clients without 6-month deprecation notice.
@@ -54,12 +54,6 @@ GET /api/v1/users?limit=20&offset=0&sort=-created_at
 - Cursor-based for large datasets; offset-based for small ones.
 
 ### 4. Deprecation Cycle
-
-| Phase       | Duration | Action                                          |
-| ----------- | -------- | ----------------------------------------------- |
-| Active      | ongoing  | Bug fixes, minor features                       |
-| Deprecation | 6 months | Warn in docs, headers, emails                   |
-| Sunset      | Month 7  | Remove entirely; sunset notices in all channels |
 
 ## Checklist
 
