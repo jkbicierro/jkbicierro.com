@@ -23,9 +23,9 @@ export default function Page() {
           {insights.map((insight) => (
             <Link key={insight.slug} href={`/insights/${insight.slug}`} className="group">
               <div className="flex flex-row gap-5">
-                <small className="min-w-[80px] max-w-[80px] lg:min-w-[150px] lg:max-w-[150px] text-slate-600 dark:text-slate-400">
+                <time className="min-w-[80px] max-w-[80px] lg:min-w-[150px] lg:max-w-[150px] text-slate-600 dark:text-slate-400">
                   {insight.date ? format(parseISO(insight.date), "MMMM d, yyyy") : ""}
-                </small>
+                </time>
                 <div className="flex flex-col gap-2">
                   <h5 className="group-hover:text-primary group-hover:underline">
                     {insight.title}
