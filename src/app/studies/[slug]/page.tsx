@@ -10,6 +10,7 @@ import { format, parseISO } from "date-fns";
 import { ChevronLeft, Share } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import ShareButton from "@/components/buttons/share-link";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -36,7 +37,6 @@ export default async function Page({ params }: PageProps) {
   try {
     const file = fs.readFileSync(filePath, "utf8");
     const { content, data } = matter(file);
-
     const timeRead = readingTime(content);
 
     return (
@@ -52,11 +52,8 @@ export default async function Page({ params }: PageProps) {
                     Back to case studies
                   </Link>
                 </Button>
-                <div className="">
-                  <Button variant={"outline"}>
-                    <Share size={16} /> Share Link
-                    <span className="hidden lg:block">&quot;{data.title}&quot;</span>
-                  </Button>
+                <div>
+                  <ShareButton title={data.title}/>
                 </div>
               </div>
 
