@@ -85,7 +85,10 @@ export default async function Page() {
                   className="mt-2 min-h-[100px] resize-none"
                 />
               </div>
-              <Button className="mt-5 w-full">Get in Touch</Button>
+              <div className="mt-5 w-full flex justify-between items-start">
+                <small className="text-slate-400">Email me instead</small>
+                <Button className="">Get in Touch</Button>
+              </div>
             </div>
           </div>
         </div>
