@@ -8,10 +8,14 @@ import { getAllProjects } from "@/lib/projects";
 import { BookOpen, Folder, Lightbulb } from "lucide-react";
 
 export default async function Footer() {
-  const contentLimit = 5;
+  /*const contentLimit = 5;
   const insights = getAllInsights().slice(0, contentLimit);
   const studies = getAllStudies().slice(0, contentLimit);
-  const projects = getAllProjects().slice(0, contentLimit);
+  const projects = getAllProjects().slice(0, contentLimit);*/
+
+  const insights = getAllInsights();
+  const studies = getAllStudies();
+  const projects = getAllProjects();
 
   const insightsCount = getAllInsights().length;
   const studiesCount = getAllStudies().length;
