@@ -92,7 +92,7 @@ export function NavBar() {
                   <Link
                     href={item.href}
                     className={`${isActive && "text-blue-500"} 
-                                            flex flex-col text-[6px] gap-1 uppercase font-semibold items-center`}
+                      flex flex-col text-[6px] gap-1 uppercase font-semibold items-center`}
                   >
                     {item.icon}
                     {item.name}
