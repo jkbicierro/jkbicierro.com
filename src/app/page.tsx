@@ -14,8 +14,8 @@ import { getAllProjects } from "@/lib/projects";
 import { getAllInsights } from "@/lib/insights";
 
 export default async function Page() {
-  const insights = getAllInsights().slice(0, 5);
-  const projects = getAllProjects().slice(0, 5);
+  const insights = getAllInsights().slice(0, 3);
+  const projects = getAllProjects().slice(0, 3);
   const studies = getAllStudies().slice(0, 3);
 
   return (
