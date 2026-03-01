@@ -33,66 +33,6 @@ export default async function Page() {
       <Insights insights={insights} />
 
       <Projects projects={projects} />
-
-      {/* Contact */}
-      <section className="py-[100px] flex items-center justify-center">
-        <div className="flex items-center justify-center">
-          <div className="flex flex-col items-center gap-20">
-            <h2 className="text-center">let&apos;s build something that works</h2>
-
-            <div className="w-full max-w-[600px] space-y-5">
-              <div>
-                <Label htmlFor="email">
-                  Email <span className="text-red-700">*</span>
-                </Label>
-                <Input
-                  type="email"
-                  id="email"
-                  placeholder="jkbicierro@gmail.com"
-                  className="mt-2"
-                />
-              </div>
-              <div className="flex gap-5">
-                <div className="w-full">
-                  <Label htmlFor="name">
-                    Name <span className="text-red-700">*</span>
-                  </Label>
-                  <Input
-                    type="text"
-                    id="name"
-                    placeholder="John Bicierro"
-                    className="mt-2"
-                  />
-                </div>
-
-                <div className="w-full">
-                  <Label htmlFor="company">Company</Label>
-                  <Input
-                    type="text"
-                    id="company"
-                    placeholder="codekada"
-                    className="mt-2"
-                  />
-                </div>
-              </div>
-              <div>
-                <Label htmlFor="message">
-                  Project Description <span className="text-red-700">*</span>
-                </Label>
-                <Textarea
-                  id="message"
-                  placeholder="A web dashboard for real-time analytics and reporting, designed to help teams make data-driven decisions faster."
-                  className="mt-2 min-h-[100px] resize-none"
-                />
-              </div>
-              <div className="mt-5 w-full flex justify-between items-start">
-                <small className="text-slate-400">Email me instead</small>
-                <Button className="">Get in Touch</Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
